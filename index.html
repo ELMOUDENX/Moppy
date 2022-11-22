@@ -3,7 +3,7 @@
 
 <head>
 	<meta charset="utf-8">
-	<title>GeoGebrey</title>
+	<title>Mopp</title>
 
 	<link rel="stylesheet" href="./styles.css" />
 
@@ -18,31 +18,28 @@
 
 <body>
 
-    <div id="set-list">
+    <div id="Blist">
+			
 			<button class="home-button" id="home-btn">
-				<img src="./Home2.png" class="icon-home" onclick="home()" />
+				<img src="./Home2.png" class="icon" onclick="home()" />
 			</button>
-			<div>
-				<hr class="line-btw" />
-	
-				<button onclick="plusZoom()" class="plus-icon"><a
-						style="text-decoration: none; color: black; padding: 0 10px 0 10px ; "
-						onclick="plusZoom()">+</a></button>
-	
-	
-				<button onclick="minusZoom()" class="minus-icon"><a
-						style="text-decoration: none;  color:  rgb(0, 0, 0); padding: 1px 12px 1px 12px ; margin: 1px 1px 1px -5px; ">-</a></button>
-				<button class="play-button">
-					<img onclick="play()" class="play-icon" src="R.png"></img>
-				</button>				
-				<button class="gr-button">
-					<img onclick="gravitate()" class="gr-icon" src="gravity.png"></img>
-				</button>
-				<button class="fix-button">
-					<img onclick="fixpos()" class="fix-icon" src="dont-move.png"></img>
-				</button>
-			</div>
+			
+			
 
+			<button onclick="plusZoom()" class="plus"><a>+</a>
+			</button>
+			<button onclick="minusZoom()" class="minus"><a>-</a>
+			</button>
+			<button class="play-button">
+				<img onclick="play()" class="icon" src="R.png"></img>
+			</button>				
+			<button class="gr-button">
+				<img onclick="gravitate()" class="icon" src="gravity.png"></img>
+			</button>
+			<button class="fix-button">
+				<img onclick="fixpos()" class="icon" src="dont-move.png"></img>
+			</button>
+			
 
 
 	</div>

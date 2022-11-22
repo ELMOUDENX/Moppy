@@ -1,31 +1,32 @@
-
-
 .p5Canvas {
    margin: 0;
    transition: 1s;
+    
 }
-
+/*   BUTTONS    */
 body {
     display: flex;
 }
-
-.play-icon {
-    width: 19.5px;
-    height: 18px;
-    padding: 2px;
-    margin-top: 4px;
-    transition: 0.4s;
-}
-.home-button {
-    height: 35px;
-    width: 37px;
+button {
+    height: 60px;
+    width: 60px;
+    left: 30px;
     border: none;
     position: absolute;
-    transition: .4s;
     cursor:pointer;
     border-radius: 5px;
-    background-color: rgb(215, 215, 215);
-    box-shadow: 1px 1px 4px rgba(85, 85, 85, 0.705);
+    background-color: rgb(246, 246, 246);
+    backdrop-filter: blur(3px);
+    box-shadow: 2px 2px 8px rgba(85, 85, 85, 0.394);
+    transition: .01s;
+    color: black;
+    
+    font-size: 50px;
+}
+button:hover {
+    background-color:rgb(213, 211, 213); 
+}
+.home-button {
     animation: home-btn 1s;
 }
 @keyframes home-btn {
@@ -33,87 +34,90 @@ body {
         margin-top: -100px;
     }
 }
+.plus{
+
+     
+    top: 90px;
+
+
+    border-radius: 5px 5px 0 0;
+    
+}
+.minus {
+    top: 150px;
+
+    border-radius: 0 0 5px 5px;
+    animation: pls-ic .95s;
+
+}
 .play-button {
-    height: 35px;
-    width: 37px;
-    border: none;
-    position: absolute;
-    top: 138px;
-    transition: .4s;
-    cursor:pointer;
-    border-radius: 5px;
-    background-color: rgb(215, 215, 215);
-    box-shadow: 1px 1px 4px rgba(85, 85, 85, 0.705);
+    top: 230px;
     animation: ply-bt .8s;
 }
 .gr-button {
-    height: 35px;
-    width: 37px;
-    border: none;
-    position: absolute;
-    top: 183px;
-    transition: .4s;
-    cursor:pointer;
-    border-radius: 5px;
-    background-color: rgb(215, 215, 215);
-    box-shadow: 1px 1px 4px rgba(85, 85, 85, 0.705);
+    bottom: 70px;
     animation: ply-bt .8s;
-}
-.gr-icon {
-    width: 25px;
-    height: 25px;
-    
-    margin-top: 4px;
-   
-    transition: 0.4s;
 }
 .fix-button {
-    height: 35px;
-    width: 37px;
-    border: none;
-    position: absolute;
-    top: 223px;
-    transition: .4s;
-    cursor:pointer;
-    border-radius: 5px;
-    background-color: rgb(215, 215, 215);
-    box-shadow: 1px 1px 4px rgba(85, 85, 85, 0.705);
+    bottom: 140px;
+    
     animation: ply-bt .8s;
 }
-.fix-icon {
-    width: 25px;
-    height: 25px;
-    
+
+
+/*  ICON */
+
+.icon {
+    width: 30px;
+    height: 30px;  
     margin-top: 4px;
-   
     transition: 0.4s;
 }
+
+
 @keyframes ply-bt {
     from {
         margin-top: 150px;
     }
 }
-.play-button:hover {
-    background-color: rgb(173, 173, 173); 
-}
-
-.home-button:hover {
-    background-color: rgb(173, 173, 173); 
-}
 
 .all-right-click {
     font-family: "Open Sans", sans-serif;
 }
+
+
+@keyframes pls-ic {
+    from {
+        margin-left: -100px;
+    }
+}
+
+
+
+@keyframes mns-ic {
+    from {
+        opacity: 0;
+        margin-left: 100px;
+    }
+}
+
+
+
+
+
+/*   C.MENU    */
+
 #context-menu {
     position: fixed;
-    z-index: 10000;
+    z-index: 10;
     width: auto;
-    background: #4e4747a5;
+    background: rgba(241, 241, 241, 0.62);
     transform:scale(0) ;
+    
     transform-origin: top left;
     border-radius: 6px;
     backdrop-filter: blur(2px);
-    box-shadow: 1px 1px 4px rgba(34, 33, 33, 0.971);
+    box-shadow: 0px 0px 20px rgba(78, 80, 87, 0.663);
 }
 #context-menu.active {
     transform: scale(1);
@@ -122,12 +126,14 @@ body {
 #context-menu .item {
     padding: 8px 10px;
     font-size: 20px;
-    color: rgb(0, 0, 0);
+    color:rgb(32, 10, 42);
+    
+    text-shadow: rgb(20, 16, 16);
 }
 
 #context-menu .item:hover {
-    background: #555;
-    border-radius: 10px;
+    background:rgb(212, 210, 212);
+    border-radius: 6px;
 }
 #context-menu .item i {
     display: inline-block;
@@ -135,73 +141,11 @@ body {
 }
 #context-menu hr {
     margin: 2px 0px;
-    border-color: rgb(241, 230, 230);
-}
-.plus-icon {
-    position: absolute;
-    top: 55px;
-    width: 37px;
-    height: 35px;
-    padding: 0px;
-    transition: 0.5s;
-    font-size: 30px;
-    border: none;
-    cursor:pointer;
-    border-radius: 5px 5px 0 0;
-    background-color: rgb(215, 215, 215);
-    box-shadow: 1px 2px 4px rgba(85, 85, 85, 0.705);
-    animation: pls-ic .95s;
-}
-@keyframes pls-ic {
-    from {
-        margin-left: -100px;
-    }
-}
-.line-btw {
-    position: absolute;
-    top: 82px;
-    width: 35px;
-    animation: ln-bt 1.6s;
-}
-@keyframes ln-bt {
-    from {
-        opacity: 0;
-        margin-top: -100px;
-    }
-}
-.minus-icon {
-    position: absolute;
-    width: 37px;
-    height: 35px;
-    font-size: 30px;
-    top: 91px;
-    border: none;
-    cursor:pointer;
-    background-color: rgb(215, 215, 215);
-    border-radius: 0 0 5px 5px;
-    box-shadow: 1px 1px 4px rgba(85, 85, 85, 0.705);
-    transition: .5s;
-    animation: mns-ic 1.3s;
-}
-@keyframes mns-ic {
-    from {
-        opacity: 0;
-        margin-left: 100px;
-    }
-}
-.icon-home {
-    width: 15px;
-    height: 15px;
-    padding: 3px;
-    transition: 0.5s;
+    border-color: rgb(36, 7, 41);
 }
 
-.plus-icon:hover {
-    background-color: rgb(173, 173, 173);
-}
-.minus-icon:hover {
-    background-color: rgb(173, 173, 173); 
-}
+/*  scrollbar */
+
 
 
 ::-webkit-scrollbar {
@@ -224,7 +168,7 @@ body {
     background: #555;
   }
 .table-icon {
-    padding: 15px;
+    padding: 25px;
     transition: .5s;
     cursor:pointer;
 }

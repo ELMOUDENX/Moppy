@@ -33,11 +33,9 @@ function setup() {
     world.R.push(new Rig(world.points[1],world.points[2]))
 }
 function draw() {
-    background(240)
+    background(256)
 
     checkselection()
-
-
     world.R.forEach(r => {
             r.update()
             r.show()

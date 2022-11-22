@@ -228,9 +228,11 @@ class Axe{
         this.O=o
         this.dir=0
         this.isX=x
+        this.col
     }
 
     show(){
+        stroke(0)
        if(this.isX){
         line(0,this.O.y,windowWidth,this.O.y)
        } 
