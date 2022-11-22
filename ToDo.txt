@@ -1,0 +1,10 @@
+//add  ----------------
+coordinates to points  V   done
+Segments
+circles
+draw functions by thier expression
+
+
+//solve bugs ---------------
+
+ change points names  done

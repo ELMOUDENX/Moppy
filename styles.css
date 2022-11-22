@@ -1,0 +1,240 @@
+
+
+.p5Canvas {
+   margin: 0;
+   transition: 1s;
+}
+
+body {
+    display: flex;
+}
+
+.play-icon {
+    width: 19.5px;
+    height: 18px;
+    padding: 2px;
+    margin-top: 4px;
+    transition: 0.4s;
+}
+.home-button {
+    height: 35px;
+    width: 37px;
+    border: none;
+    position: absolute;
+    transition: .4s;
+    cursor:pointer;
+    border-radius: 5px;
+    background-color: rgb(215, 215, 215);
+    box-shadow: 1px 1px 4px rgba(85, 85, 85, 0.705);
+    animation: home-btn 1s;
+}
+@keyframes home-btn {
+    from {
+        margin-top: -100px;
+    }
+}
+.play-button {
+    height: 35px;
+    width: 37px;
+    border: none;
+    position: absolute;
+    top: 138px;
+    transition: .4s;
+    cursor:pointer;
+    border-radius: 5px;
+    background-color: rgb(215, 215, 215);
+    box-shadow: 1px 1px 4px rgba(85, 85, 85, 0.705);
+    animation: ply-bt .8s;
+}
+.gr-button {
+    height: 35px;
+    width: 37px;
+    border: none;
+    position: absolute;
+    top: 183px;
+    transition: .4s;
+    cursor:pointer;
+    border-radius: 5px;
+    background-color: rgb(215, 215, 215);
+    box-shadow: 1px 1px 4px rgba(85, 85, 85, 0.705);
+    animation: ply-bt .8s;
+}
+.gr-icon {
+    width: 25px;
+    height: 25px;
+    
+    margin-top: 4px;
+   
+    transition: 0.4s;
+}
+.fix-button {
+    height: 35px;
+    width: 37px;
+    border: none;
+    position: absolute;
+    top: 223px;
+    transition: .4s;
+    cursor:pointer;
+    border-radius: 5px;
+    background-color: rgb(215, 215, 215);
+    box-shadow: 1px 1px 4px rgba(85, 85, 85, 0.705);
+    animation: ply-bt .8s;
+}
+.fix-icon {
+    width: 25px;
+    height: 25px;
+    
+    margin-top: 4px;
+   
+    transition: 0.4s;
+}
+@keyframes ply-bt {
+    from {
+        margin-top: 150px;
+    }
+}
+.play-button:hover {
+    background-color: rgb(173, 173, 173); 
+}
+
+.home-button:hover {
+    background-color: rgb(173, 173, 173); 
+}
+
+.all-right-click {
+    font-family: "Open Sans", sans-serif;
+}
+#context-menu {
+    position: fixed;
+    z-index: 10000;
+    width: auto;
+    background: #4e4747a5;
+    transform:scale(0) ;
+    transform-origin: top left;
+    border-radius: 6px;
+    backdrop-filter: blur(2px);
+    box-shadow: 1px 1px 4px rgba(34, 33, 33, 0.971);
+}
+#context-menu.active {
+    transform: scale(1);
+    transition: transform 200ms ease-in-out;
+}
+#context-menu .item {
+    padding: 8px 10px;
+    font-size: 20px;
+    color: rgb(0, 0, 0);
+}
+
+#context-menu .item:hover {
+    background: #555;
+    border-radius: 10px;
+}
+#context-menu .item i {
+    display: inline-block;
+    margin-right: 5px
+}
+#context-menu hr {
+    margin: 2px 0px;
+    border-color: rgb(241, 230, 230);
+}
+.plus-icon {
+    position: absolute;
+    top: 55px;
+    width: 37px;
+    height: 35px;
+    padding: 0px;
+    transition: 0.5s;
+    font-size: 30px;
+    border: none;
+    cursor:pointer;
+    border-radius: 5px 5px 0 0;
+    background-color: rgb(215, 215, 215);
+    box-shadow: 1px 2px 4px rgba(85, 85, 85, 0.705);
+    animation: pls-ic .95s;
+}
+@keyframes pls-ic {
+    from {
+        margin-left: -100px;
+    }
+}
+.line-btw {
+    position: absolute;
+    top: 82px;
+    width: 35px;
+    animation: ln-bt 1.6s;
+}
+@keyframes ln-bt {
+    from {
+        opacity: 0;
+        margin-top: -100px;
+    }
+}
+.minus-icon {
+    position: absolute;
+    width: 37px;
+    height: 35px;
+    font-size: 30px;
+    top: 91px;
+    border: none;
+    cursor:pointer;
+    background-color: rgb(215, 215, 215);
+    border-radius: 0 0 5px 5px;
+    box-shadow: 1px 1px 4px rgba(85, 85, 85, 0.705);
+    transition: .5s;
+    animation: mns-ic 1.3s;
+}
+@keyframes mns-ic {
+    from {
+        opacity: 0;
+        margin-left: 100px;
+    }
+}
+.icon-home {
+    width: 15px;
+    height: 15px;
+    padding: 3px;
+    transition: 0.5s;
+}
+
+.plus-icon:hover {
+    background-color: rgb(173, 173, 173);
+}
+.minus-icon:hover {
+    background-color: rgb(173, 173, 173); 
+}
+
+
+::-webkit-scrollbar {
+    width: 10px;
+  }
+  
+  ::-webkit-scrollbar-track {
+    background-color: rgb(218, 218, 218);
+    transition: 0.5s;
+    opacity: 0;
+  }
+   
+  ::-webkit-scrollbar-thumb {
+    background: rgba(20, 20, 20, 0.911); 
+    border-radius: 15px;
+    opacity: 0;
+  }
+  
+  ::-webkit-scrollbar-thumb:hover {
+    background: #555;
+  }
+.table-icon {
+    padding: 15px;
+    transition: .5s;
+    cursor:pointer;
+}
+.table-icon:hover {
+    margin-left: -10px;
+    
+  }
+
+.table-elemnts-div {
+    overflow: visible;
+    position: relative;
+    right: 15px;
+}
