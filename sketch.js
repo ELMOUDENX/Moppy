@@ -15,7 +15,7 @@ function setup() {
     canvas=createCanvas( windowWidth-margin[0],windowHeight-margin[1] )
     world=new World()
 
-    world.addFun(funExpr)
+    //world.addFun(funExpr)
 
     offsit=canvas.position()
 
@@ -25,12 +25,12 @@ function setup() {
 
 
 
-    world.addPoint(new Dot(0,0,false))
+    /*world.addPoint(new Dot(0,0,false))
     world.points[0].fix=true
     world.addPoint(new Dot(4,0,false))
     world.addPoint(new Dot(2,4,false))
     world.R.push(new Rig(world.points[0],world.points[1]))
-    world.R.push(new Rig(world.points[1],world.points[2]))
+    world.R.push(new Rig(world.points[1],world.points[2]))*/
 }
 function draw() {
     background(256)
@@ -278,6 +278,3 @@ function addfun(e) {
     world.addFun(e.value)
 }
 
-function showPanel(){
-    world.showHTMLPanel()
-}

@@ -20,7 +20,7 @@ button {
     box-shadow: 2px 2px 8px rgba(85, 85, 85, 0.394);
     transition: .01s;
     color: black;
-    
+    animation: pls-ic .95s;
     font-size: 50px;
 }
 button:hover {
@@ -35,20 +35,12 @@ button:hover {
     }
 }
 .plus{
-
-     
     top: 90px;
-
-
     border-radius: 5px 5px 0 0;
-    
 }
 .minus {
     top: 150px;
-
     border-radius: 0 0 5px 5px;
-    animation: pls-ic .95s;
-
 }
 .play-button {
     top: 230px;

@@ -7,7 +7,7 @@ body {
   .wrapper {
     display: flex;
     height: 100vh;
-    transition: 0.5s;
+    transition: 5s;
   }
   
   .main {
@@ -15,10 +15,13 @@ body {
     padding: 20px;
     overflow-y: auto;
   }
-  
+    .side-panel {
+    flex-grow: 1;
+    padding: 20px;
+    overflow-y: auto;
+  }
   .side-panel-toggle {
-    width: 40px;
-    height: 40px;
+
     flex-shrink: 0;
     display: grid;
     place-items: center;
@@ -26,7 +29,7 @@ body {
     color: #ffffff;
     background: #767676;
     border: none;
-    border-radius: 5px 0 0 5px;
+    border-radius: 30px 0 0 30px;
     outline: none;
     cursor: pointer;
     margin-top: auto;
@@ -35,7 +38,7 @@ body {
   }
   
   .side-panel-toggle:hover {
-    background: #232323;
+    background: #080262;
   }
   
   .sp-icon-close {
@@ -44,18 +47,19 @@ body {
   }
   
   .side-panel {
+    position: absolute;
     display: none;
     width: 200px;
     flex-shrink: 0;
     padding: 20px;
-    color: #ffffff;
-    background: #00c150;
+    background: #b8bff7;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.35);
     transition: 1s;
   }
   
   .side-panel-open .side-panel {
     display: initial;
+    right: 0%;
     transition: 1s;
   }
   
