@@ -1,5 +1,6 @@
 class Fun{
-
+    static nameL=["f","g","h","p","q","r","s"]
+    static i=0
     constructor(f){
         this.f=f // expression as a string of x, support continuous functions now
         this.segs=[] // array of segs
@@ -7,8 +8,13 @@ class Fun{
         this.range=[world.Xtox(0),world.Xtox(windowWidth)]//xmin xmax
         this.colHu=random(360)
         this.construct()
+        this.name
+        
+        this.i=Fun.i
+        Fun.i++
         
     }
+
     fun(x){
         return eval(this.f)
     }
@@ -39,6 +45,23 @@ class Fun{
         this.segs.forEach(e=>{
             e.show()
         })
+    }
+
+
+    get content(){
+        return this.name+"(x) =  "+this.f  
+    }
+    get name(){
+        stroke(0)
+        strokeWeight(0)
+
+        let l=Fun.nameL[Fun.i%7-1]  
+        let n=int(this.i/7)
+        return n==0?l:l+n
+    }
+    
+    addToPanel(){
+        appendObjToPanel(this)
     }
 }
 

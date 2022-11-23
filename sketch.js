@@ -25,10 +25,10 @@ function setup() {
 
 
 
-    world.points.push(new Dot(0,0,false))
+    world.addPoint(new Dot(0,0,false))
     world.points[0].fix=true
-    world.points.push(new Dot(4,0,false))
-    world.points.push(new Dot(2,4,false))
+    world.addPoint(new Dot(4,0,false))
+    world.addPoint(new Dot(2,4,false))
     world.R.push(new Rig(world.points[0],world.points[1]))
     world.R.push(new Rig(world.points[1],world.points[2]))
 }
@@ -128,7 +128,7 @@ function mousePressed() {
 	}
 	
 	if(keyIsDown(CONTROL)){
-		world.points.push(new Dot(mouseX,mouseY ))
+		world.addPoint(new Dot(mouseX,mouseY ))
 		return
 	}
 
@@ -194,7 +194,7 @@ function mouseReleased() {
 	world.points.forEach(e => {
 	e.selected = false;})
 }
-  
+
 function keyPressed() {
 }
 

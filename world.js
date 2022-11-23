@@ -32,6 +32,8 @@ class World{
         this.pointIsSelected=false
         this.selected=[]
         this.ActiveSelection
+        
+        this.panel = document.getElementById('panel')
 
     }
 // zoom
@@ -209,6 +211,7 @@ class World{
     addPoint(A){
         //let A=new Point(x,y,true)
         this.points.push(A)
+        A.addToPanel()
     }
     addSegm(A,B){
         let S=new Seg(A,B)
@@ -216,51 +219,13 @@ class World{
         this.segs.push(S)
     }
     addFun(f){
-        this.functions.push(new Fun(f))
+        let fx=new Fun(f)
+        this.functions.push(fx)
+        fx.addToPanel()
     }
 
 
-    showHTMLPanel(){
 
-
-        this.panel = document.getElementById('panel')
-        let diq,clone,chbx
-            
- 
-        this.points.forEach((p)=> {
-            diq= document.createElement('div' )
-            clone= document.createElement('div' )
-            //chbx= document.createElement('input' )
-            //chbx.type='checkbox'
-
-
-            diq.className='panelItem' 
-            diq.id=p.name
-
-            clone.textContent = ' Point : ' + p.name+" = (" +p.x+","+p.y+")";
-
-            //diq.appendChild(chbx);
-            diq.appendChild(clone);
-            this.panel.appendChild(diq);
-        });
-
-
-
-
-
-
-
-        
-        this.functions.forEach((p)=> {
-            diq= document.createElement('div' )
-            
-            diq.className='panelItem' 
-            //diq.id=p.name
-
-            diq.textContent = ' Function : ' ;
-            this.panel.appendChild(diq);
-        });
-    }
 
 }
 
@@ -323,7 +288,9 @@ class Point{
     get y(){
         return this.p.y
     }
-
+    get content(){
+        return this.name+" = ("+decimalize(this.x)+","+decimalize(this.y)+")"  
+    }
     highLight(){
                 
         stroke(203,200,255)
@@ -345,7 +312,7 @@ class Point{
     }
     showLabel(){
         if(this.SHOWLABEL){
-            text("("+int(100*this.x)/100+","+int(100*this.y)/100+")",this.X+7,this.Y+8)
+            text("("+decimalize(this.x)+","+decimalize(this.y)+")",this.X+7,this.Y+8)
         }
     }
     
@@ -359,6 +326,10 @@ class Point{
         //strokeWeight(8)
 
         point(this.X,this.Y)
+    }
+
+    addToPanel(){
+        appendObjToPanel(this)
     }
 }
 class Seg{

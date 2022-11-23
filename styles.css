@@ -195,12 +195,12 @@ button:hover {
     right: 250px;
 }
 
-.panelItem {
+.pItem {
+    display: flex;
+    flex-direction: row;
     height: 30px;
-    outline: rgb(4, 78, 252);
-    width: auto;
-    left: 30px;
-    border: 1px;
+
+
     margin: 6px;
     padding-top: 16px;
     cursor:pointer;
@@ -214,9 +214,13 @@ button:hover {
     font-size: 20px;
 }
 
-.panelItem::hover {
+.pItem:hover {
     background: rgba(31, 31, 41, 0.82);
 }
 
 /*   Check Box*/
 
+.pItemChbx {
+    color: black;
+    display: inline;
+}
