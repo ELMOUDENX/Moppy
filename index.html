@@ -6,7 +6,7 @@
 	<title>Mopp</title>
 
 	<link rel="stylesheet" href="./styles.css" />
-
+	<link rel="stylesheet" href="./chekMark.css" />
 	<script src="p5.js"></script>
 	
 	<script src="world.js"></script>
@@ -48,21 +48,44 @@
 	</div>
 
 	<main></main>
-	<button id="table-btn">
-		<img onclick="showPanel()" class="icon" src="./leftArrow.png"></img>
-	</button>
 
 
-	<div class="Panel" id="panel" >
-		<div id="panellist">
-		</div>	
-		<div class="item">
-			<input  id="addfun" onchange="addfun(this)">add function </checkbox>
-		</div>	
-	</div>
-	
+	<div class="wrapper side-panel-open">
+
 		
+
+		<button class="side-panel-toggle" type="button" id="table-btn">
+			<img onclick="showPanel()" class="icon" src="./leftArrow.png"></img>
+			<span class="material-icons sp-icon-open"></span>
+			<span class="material-icons sp-icon-close"></span>
+		</button>
+
+		<div class="side-panel"id="panel">
+			
+
+			<div id="panellist">
+			</div>	
+			<div class="item">
+				<input  id="addfun" onchange="addfun(this)">add function </checkbox>
+			</div>	
+		</div>
+
+
+	</div>
+		
+	<script>document.querySelector(".side-panel-toggle").addEventListener("click", () => {
+			document.querySelector(".wrapper").classList.toggle("side-panel-open");
+		});
+	</script>
 	
+
+
+
+
+
+
+
+
 		<div id="context-menu" class="all-right-click">
 			<div class="item">
 				<input type="checkbox" class=".c-checkbox" id="grid" onchange="toggleGrid()" checked="true"> grid</checkbox>
