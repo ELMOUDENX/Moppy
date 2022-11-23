@@ -3,7 +3,7 @@ let offsit,t=0
 let gg=document.querySelector("#grid")
 let canvas,funExpr="Math.sin(3*x)"
 
-let margin=[10,20]
+let margin=[20,30]
 
 
 //   SETUP DRAW  MAIN LOOP :
@@ -276,4 +276,8 @@ function LOAD() {
 
 function addfun(e) {
     world.addFun(e.value)
+}
+
+function showPanel(){
+    world.showHTMLPanel()
 }

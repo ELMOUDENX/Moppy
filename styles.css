@@ -1,6 +1,6 @@
 .p5Canvas {
    margin: 0;
-   transition: 1s;
+   
     
 }
 /*   BUTTONS    */
@@ -93,7 +93,6 @@ button:hover {
 }
 
 
-
 @keyframes mns-ic {
     from {
         opacity: 0;
@@ -101,7 +100,17 @@ button:hover {
     }
 }
 
+#table-btn {
+    background: rgba(0, 255, 255, 0);
+    left: 95%;
+    top: 47%;
 
+    transition: 0.4s;
+}
+.Panel {
+    justify-self: end;
+    float: left;
+}
 
 
 
@@ -117,13 +126,13 @@ button:hover {
     transform-origin: top left;
     border-radius: 6px;
     backdrop-filter: blur(2px);
-    box-shadow: 0px 0px 20px rgba(78, 80, 87, 0.663);
+    box-shadow: 0px 0px 20px rgba(226, 228, 234, 0.663);
 }
 #context-menu.active {
     transform: scale(1);
     transition: transform 200ms ease-in-out;
 }
-#context-menu .item {
+.item {
     padding: 8px 10px;
     font-size: 20px;
     color:rgb(32, 10, 42);
@@ -177,8 +186,34 @@ button:hover {
     
   }
 
-.table-elemnts-div {
+.Panel {
     overflow: visible;
     position: relative;
-    right: 15px;
+    background: rgba(255, 255, 255, 0.905);
+    box-shadow: 0px 0px 8px rgba(37, 3, 3, 0.394);
+    right: 250px;
+}
+
+.panelItem {
+    height: 40px;
+    outline: rgb(4, 78, 252);
+    width: auto;
+    left: 30px;
+    border: 1px;
+    margin: 6px;
+    padding-top: 16px;
+    padding-left: 16px;
+    cursor:pointer;
+    border-radius: 8px;
+    background-color: rgb(238, 242, 233);
+    backdrop-filter: blur(3px);
+    box-shadow: 2px 2px 4px rgba(85, 85, 85, 0.394);
+
+    color: black;
+    
+    font-size: 26px;
+}
+
+.panelItem::hover {
+    background: rgba(31, 31, 41, 0.82);
 }

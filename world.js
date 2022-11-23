@@ -155,7 +155,6 @@ class World{
         }
 
     }
-
     show(){
         this.showGrid()
         this.showAxis()
@@ -221,6 +220,55 @@ class World{
     }
 
 
+    showHTMLPanel(){
+
+        /*let pointsNamesDivs=[]
+        let pointsIDDivs=[]
+        var container = document.createElement('div',{ class: 'container'});
+        var intro = document.createElement('span',{ class: 'intro'});
+
+        this.points.forEach(p => {
+            pointsNamesDivs.push(document.createElement('span',{ id: p.name}))
+            pointsIDDivs.push(document.createTextNode(p.name))
+            pointsNamesDivs[this.points.length-1].appendChild(pointsIDDivs[this.points.length-1]);
+
+        });
+
+        pointsNamesDivs.forEach(e => {
+            container.appendChild(e);
+
+        });
+
+        document.body.appendChild(container);
+        for (i = 0; i < this.points; i++) {
+            $('<div class="all-right-click" />').text(this.points[i])//.appendTo('body');
+        }*/
+
+
+
+        var panel = document.getElementById('panel'),diq
+            
+ 
+        this.points.forEach((p)=> {
+            diq= document.createElement('div' )
+            
+            diq.className='panelItem' 
+            diq.id=p.name
+
+            diq.textContent = ' Point : ' + p.name;
+            panel.appendChild(diq);
+        });
+        this.functions.forEach((p)=> {
+            diq= document.createElement('div' )
+            
+            diq.className='panelItem' 
+            //diq.id=p.name
+
+            diq.textContent = ' Function : ' ;
+            panel.appendChild(diq);
+        });
+    }
+
 }
 
 class Axe{
@@ -262,6 +310,7 @@ class Point{
             this.SHOWLABEL=true
             this.selected=false
             this.showen=true
+            this.name
             this.col='blue'
     }
     dist(X,Y,byPixel=true){
@@ -290,14 +339,16 @@ class Point{
 
         point(this.X,this.Y)
     }
-    showName(){
-        stroke(0)
+    get name(){
+                stroke(0)
         strokeWeight(0)
 
         let l=this.n%26
         let n=int(this.n/26)
-        let r=n==0?String.fromCharCode(l+65):String.fromCharCode(l+65)+n
-        text(r,this.X+7,this.Y-5)
+        return n==0?String.fromCharCode(l+65):String.fromCharCode(l+65)+n
+    }
+    showName(){
+        text(this.name,this.X+7,this.Y-5)
     }
     showLabel(){
         if(this.SHOWLABEL){
