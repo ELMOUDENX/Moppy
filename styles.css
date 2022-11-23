@@ -189,20 +189,20 @@ button:hover {
 .Panel {
     overflow: visible;
     position: relative;
+    width: auto;
     background: rgba(255, 255, 255, 0.905);
     box-shadow: 0px 0px 8px rgba(37, 3, 3, 0.394);
     right: 250px;
 }
 
 .panelItem {
-    height: 40px;
+    height: 30px;
     outline: rgb(4, 78, 252);
     width: auto;
     left: 30px;
     border: 1px;
     margin: 6px;
     padding-top: 16px;
-    padding-left: 16px;
     cursor:pointer;
     border-radius: 8px;
     background-color: rgb(238, 242, 233);
@@ -211,9 +211,12 @@ button:hover {
 
     color: black;
     
-    font-size: 26px;
+    font-size: 20px;
 }
 
 .panelItem::hover {
     background: rgba(31, 31, 41, 0.82);
 }
+
+/*   Check Box*/
+

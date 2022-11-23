@@ -222,42 +222,35 @@ class World{
 
     showHTMLPanel(){
 
-        /*let pointsNamesDivs=[]
-        let pointsIDDivs=[]
-        var container = document.createElement('div',{ class: 'container'});
-        var intro = document.createElement('span',{ class: 'intro'});
 
-        this.points.forEach(p => {
-            pointsNamesDivs.push(document.createElement('span',{ id: p.name}))
-            pointsIDDivs.push(document.createTextNode(p.name))
-            pointsNamesDivs[this.points.length-1].appendChild(pointsIDDivs[this.points.length-1]);
-
-        });
-
-        pointsNamesDivs.forEach(e => {
-            container.appendChild(e);
-
-        });
-
-        document.body.appendChild(container);
-        for (i = 0; i < this.points; i++) {
-            $('<div class="all-right-click" />').text(this.points[i])//.appendTo('body');
-        }*/
-
-
-
-        var panel = document.getElementById('panel'),diq
+        this.panel = document.getElementById('panel')
+        let diq,clone,chbx
             
  
         this.points.forEach((p)=> {
             diq= document.createElement('div' )
-            
+            clone= document.createElement('div' )
+            //chbx= document.createElement('input' )
+            //chbx.type='checkbox'
+
+
             diq.className='panelItem' 
             diq.id=p.name
 
-            diq.textContent = ' Point : ' + p.name;
-            panel.appendChild(diq);
+            clone.textContent = ' Point : ' + p.name+" = (" +p.x+","+p.y+")";
+
+            //diq.appendChild(chbx);
+            diq.appendChild(clone);
+            this.panel.appendChild(diq);
         });
+
+
+
+
+
+
+
+        
         this.functions.forEach((p)=> {
             diq= document.createElement('div' )
             
@@ -265,7 +258,7 @@ class World{
             //diq.id=p.name
 
             diq.textContent = ' Function : ' ;
-            panel.appendChild(diq);
+            this.panel.appendChild(diq);
         });
     }
 
