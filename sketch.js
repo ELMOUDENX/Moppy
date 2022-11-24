@@ -154,9 +154,8 @@ function mousePressed() {
 			if(e.selected ) e.fix =!e.fix ;})
 		return 
 	}
-
-
 }
+
 let xOffset=0,yOffset=0
 
 function mouseDragged(e) {
