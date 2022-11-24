@@ -202,10 +202,6 @@ function keyPressed() {
 
   
 
-function toggleShow(e){
-    console.log(e);
-    e.showen=!e.showen
-}
 
 
 
@@ -283,3 +279,7 @@ function addfun(e) {
     world.addFun(e.value)
 }
 
+function toggleShow(e){
+    console.log(e);
+    e.showen=!e.showen
+}

@@ -20,9 +20,7 @@ class World{
         this.Origine=createVector(0.6*windowWidth,windowHeight/2)
         this.i=createVector(this.GRIDLENGTH,0)
         this.j=createVector(0,-this.GRIDLENGTH)
-        this.I=createVector(1,0)
-        this.J=createVector(0,1)
-
+ 
         this.points=[]
         this.segs=[]
 
