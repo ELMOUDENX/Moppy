@@ -1,0 +1,162 @@
+body {
+    margin: 0;
+    font-family: sans-serif;
+    line-height: 1.5;
+  }
+  
+.spbutton {
+  position: relative;
+  right: 0px;
+  padding: 25px;
+  transition: .5s;
+  cursor:pointer;
+}
+.spbutton:hover {
+  margin-left: -10px;
+  
+}
+.spbutton:before  {
+  display: initial;
+  right: 20%;
+  margin-left: 210px;
+  transition: 1s;
+}
+.side-panel {
+  position: absolute;
+  display: none;
+  width: auto;
+  padding: 5%;
+  flex-shrink: 0;
+  background: #b8bff7;
+  box-shadow: 0 0 16px rgba(0, 0, 0, 0.578);
+  transition: 1s;
+}
+
+.spbutton:hover {
+  background: #080262;
+}
+  
+
+.side-panel-open .side-panel {
+  display: initial;
+  position:static;
+  right:50%;
+  transition: 1s;
+}
+
+.side-panel-open .sp-icon-open {
+  display: none !important;
+}
+
+.side-panel-open .sp-icon-close {
+  display: initial !important;
+}
+
+.Panel {
+  overflow: visible;
+  position: relative;
+  width: auto;
+  background: rgba(255, 255, 255, 0.905);
+  box-shadow: 0px 0px 8px rgba(37, 3, 3, 0.394);
+  right: 250px;
+}
+
+.pItem {
+  display: flex;
+  flex-direction: row;
+  height: auto;
+  place-items: center;
+
+  margin: 7px;
+  padding: 16px;
+  cursor:pointer;
+  border-radius: 8px;
+  background-color: rgb(250, 247, 244);
+  backdrop-filter: blur(3px);
+  box-shadow: -2px -2px 2px rgba(85, 85, 85, 0.394);
+
+  color: black;
+  
+  font-size: 20px;
+}
+
+.pItem:hover {
+  background: rgba(228, 228, 238, 0.55);
+}
+
+.sp-icon-close {
+  display: none !important;
+  transition: 1px;
+}
+.wrapper {
+  display: flex;
+  position: absolute;
+  height: 100vh;
+  transition: 5s;
+}
+  
+.main {
+  flex-grow: 1;
+  padding: 20px;
+}
+
+/*   Check Box*/
+
+.pItemChbx {
+  color: black;
+  display:flex;
+  
+
+}
+
+
+
+
+#table-btn {
+  background: rgba(0, 255, 255, 0);
+  left: 95%;
+  top: 47%;
+  transition: 0.4s;
+}
+
+  
+INPUT[type=checkbox]
+{
+    background-color: #DDD;
+    border-radius: 5px;
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    width: 27px;
+    height: 27px;
+    cursor: pointer;
+    position: relative;
+    
+}
+
+
+INPUT[type=checkbox]:focus
+{
+      outline: 3px solid rgba(37, 4, 254, 0.2);
+}
+INPUT[type=checkbox]:checked
+{
+    background-color: #409fd6;
+    background: #409fd6 url("data:image/gif;base64,R0lGODlhCwAKAIABAP////3cnSH5BAEKAAEALAAAAAALAAoAAAIUjH+AC73WHIsw0UCjglraO20PNhYAOw==") 8px 8px no-repeat;
+}
+
+INPUT
+{
+  margin:  8px ;
+  padding: 8px;
+  background-color: rgb(212, 208, 208);
+  border-radius: 6px;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  
+  height:26px;
+  font-size: 20px;
+  position: relative;
+  initial-value: 3;
+    
+}

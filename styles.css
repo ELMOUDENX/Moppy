@@ -1,23 +1,27 @@
 .p5Canvas {
    margin: 0;
-   
+   z-index: -10;
     
 }
 /*   BUTTONS    */
 body {
     display: flex;
 }
+input{
+    display: list-item;
+
+}
 button {
-    height: 60px;
-    width: 60px;
-    left: 30px;
-    border: none;
+    height  : 60px;
+    width   : 60px;
+    right    : 30px;
+    border  : none;
     position: absolute;
-    cursor:pointer;
-    border-radius: 5px;
-    background-color: rgb(246, 246, 246);
+    cursor  :pointer;
+    border-radius:   5px;
+    background-color: rgba(246, 246, 246, 0.709);
     backdrop-filter: blur(3px);
-    box-shadow: 2px 2px 8px rgba(85, 85, 85, 0.394);
+    box-shadow: 2px 2px 8px rgba(5, 5, 5, 0.394);
     transition: .01s;
     color: black;
     animation: pls-ic .95s;
@@ -25,6 +29,9 @@ button {
 }
 button:hover {
     background-color:rgb(213, 211, 213); 
+}
+button:active{
+    background-color: rgba(149, 123, 123, 0.89);
 }
 .home-button {
     animation: home-btn 1s;
@@ -55,7 +62,19 @@ button:hover {
     
     animation: ply-bt .8s;
 }
+@keyframes pls-ic {
+    from {
+        margin-left: -100px;
+    }
+}
 
+
+@keyframes mns-ic {
+    from {
+        opacity: 0;
+        margin-left: 100px;
+    }
+}
 
 /*  ICON */
 
@@ -78,31 +97,7 @@ button:hover {
 }
 
 
-@keyframes pls-ic {
-    from {
-        margin-left: -100px;
-    }
-}
 
-
-@keyframes mns-ic {
-    from {
-        opacity: 0;
-        margin-left: 100px;
-    }
-}
-
-#table-btn {
-    background: rgba(0, 255, 255, 0);
-    left: 95%;
-    top: 47%;
-
-    transition: 0.4s;
-}
-.Panel {
-    justify-self: end;
-    float: left;
-}
 
 
 
@@ -115,104 +110,33 @@ button:hover {
     background: rgba(241, 241, 241, 0.62);
     transform:scale(0) ;
     
-    transform-origin: top left;
+    transform-origin: top right;
     border-radius: 6px;
     backdrop-filter: blur(2px);
-    box-shadow: 0px 0px 20px rgba(226, 228, 234, 0.663);
+    box-shadow: 0px 0px 10px rgba(94, 97, 105, 0.663);
 }
 #context-menu.active {
     transform: scale(1);
     transition: transform 200ms ease-in-out;
 }
-.item {
+.citem {
+    display: flex;
     padding: 8px 10px;
     font-size: 20px;
-    color:rgb(32, 10, 42);
-    
-    text-shadow: rgb(20, 16, 16);
+    color:rgb(0, 0, 0);
 }
 
-#context-menu .item:hover {
-    background:rgb(212, 210, 212);
+#context-menu .citem:hover {
+    background:rgba(185, 181, 178, 0.72);
     border-radius: 6px;
 }
-#context-menu .item i {
+#context-menu .citem i {
     display: inline-block;
-    margin-right: 5px
+    padding-left: 35px;
 }
 #context-menu hr {
-    margin: 2px 0px;
+    margin: 2px 5px;
     border-color: rgb(36, 7, 41);
 }
 
-/*  scrollbar */
 
-
-
-::-webkit-scrollbar {
-    width: 10px;
-  }
-  
-  ::-webkit-scrollbar-track {
-    background-color: rgb(218, 218, 218);
-    transition: 0.5s;
-    opacity: 0;
-  }
-   
-  ::-webkit-scrollbar-thumb {
-    background: rgba(20, 20, 20, 0.911); 
-    border-radius: 15px;
-    opacity: 0;
-  }
-  
-  ::-webkit-scrollbar-thumb:hover {
-    background: #555;
-  }
-.table-icon {
-    padding: 25px;
-    transition: .5s;
-    cursor:pointer;
-}
-.table-icon:hover {
-    margin-left: -10px;
-    
-  }
-
-.Panel {
-    overflow: visible;
-    position: relative;
-    width: auto;
-    background: rgba(255, 255, 255, 0.905);
-    box-shadow: 0px 0px 8px rgba(37, 3, 3, 0.394);
-    right: 250px;
-}
-
-.pItem {
-    display: flex;
-    flex-direction: row;
-    height: 30px;
-
-
-    margin: 6px;
-    padding-top: 16px;
-    cursor:pointer;
-    border-radius: 8px;
-    background-color: rgb(238, 242, 233);
-    backdrop-filter: blur(3px);
-    box-shadow: 2px 2px 4px rgba(85, 85, 85, 0.394);
-
-    color: black;
-    
-    font-size: 20px;
-}
-
-.pItem:hover {
-    background: rgba(31, 31, 41, 0.82);
-}
-
-/*   Check Box*/
-
-.pItemChbx {
-    color: black;
-    display: inline;
-}

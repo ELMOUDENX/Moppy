@@ -108,7 +108,12 @@ class World{
 
             if (this.SHOWNUMBERS[0]) {
                 let minmax=this.Origine.y>windowHeight-margin[1]-20?windowHeight-margin[1]-20:this.Origine.y<0?0 :this.Origine.y                
+                strokeWeight(0)
                 text(((k-int(this.Origine.x/gridwidth))/lower), /**/ offsit+k*gridwidth  -16 /**/, minmax+16)
+                strokeWeight(2)
+
+                line(offsit+k*gridwidth,minmax+3,/**/  offsit+k*gridwidth  /**/,minmax)
+            
             }               
             
         }
@@ -137,8 +142,10 @@ class World{
 
             if (this.SHOWNUMBERS[1]) {
                 let minmax=this.Origine.x>windowWidth-margin[0]?windowWidth-margin[0]:(this.Origine.x<0?20:this.Origine.x)                 
-
+                strokeWeight(0)
                 text((-(k-int(this.Origine.y/gridwidth))/lower),minmax-16,/**/  offsit+k*gridwidth+16  /**/)
+                strokeWeight(2)
+                line(minmax-3,/**/  offsit+k*gridwidth  /**/,minmax,/**/  offsit+k*gridwidth)
             }
                 
         }
@@ -265,15 +272,16 @@ class Point{
             }
         }
 
-            this.SHOWLABEL=true
-            this.selected=false
-            this.showen=true
-            this.name
-            this.col='blue'
+        this.SHOWLABEL=true
+        this.selected=false
+        this.showen=false
+        this.name
+        this.col='blue'
     }
     dist(X,Y,byPixel=true){
         return world.fromWorldToScreen(this.p.x,this.p.y).dist(createVector(X,Y))
     }
+
     get X(){
         //screen coords
         return world.xtoX(this.p.x)
@@ -317,15 +325,25 @@ class Point{
     }
     
     show(){
-        this.showName()
-        this.showLabel()
-        if (this.selected) {
-            this.highLight()
-        }
-        //stroke(this.col)
-        //strokeWeight(8)
+        if(this.showen) {
+            this.showName()
+            this.showLabel()
+            if (this.selected) {
+                this.highLight()
+            }
+            //stroke(this.col)
+            //strokeWeight(8)
 
-        point(this.X,this.Y)
+            point(this.X,this.Y)
+        }
+    }
+    move(mouseX,mouseY){
+        this.p.x=world.Xtox(mouseX)
+        this.p.y=world.Ytoy(mouseY)
+
+        let text = document.getElementById(this.name);
+
+        text.textContent =this.content ;
     }
 
     addToPanel(){

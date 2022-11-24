@@ -6,16 +6,19 @@
 	<title>Mopp</title>
 
 	<link rel="stylesheet" href="./styles.css" />
-	<link rel="stylesheet" href="./chekMark.css" />
+	<link rel="stylesheet" href="./sidePanel.css" />
+
 	<script src="p5.js"></script>
-	
+	<script src="sketch.js"></script>	
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+
+	<script src="Utilities.js"></script>	
 	<script src="world.js"></script>
-	<script src="sketch.js"></script>
-	<script src="Utilities.js"></script>
-	<script src="script.js"></script>
+
+
 	<script src="Mechanics.js"></script>
 	<script src="curves.js"></script>
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+	<script src="script.js"></script>
 
 </head>
 
@@ -25,7 +28,7 @@
 			
 			<button class="home-button" id="home-btn">
 				<img src="./Home2.png" class="icon" onclick="home()" />
-			</button>
+			</button>*/
 			
 			
 
@@ -48,72 +51,58 @@
 	</div>
 
 	<main></main>
-
-
 	<div class="wrapper side-panel-open">
-
-		
-
-		<button class="side-panel-toggle" type="button" id="table-btn">
-			<img  class="icon" src="./leftArrow.png"></img>
-			<span class="material-icons sp-icon-open"></span>
-			<span class="material-icons sp-icon-close"></span>
-		</button>
-		<div class="main">
-
-			
-		</div>
 		<div class="side-panel"id="panel">
 			
 
 			<div id="panellist">
 			</div>	
 			<div class="item">
-				<input  id="addfun" onchange="addfun(this)">add function </checkbox>
+				<input  id="addfun"
+				placeholder=" f(x)= ..." onchange="addfun(this)">add function </checkbox>
+	
+
 			</div>	
 		</div>
+		<button class="spbutton" type="button" >			
+			<span class="material-icons sp-icon-open"></span>
+			<span class="material-icons sp-icon-close"></span>
+		</button>
+
+
 
 
 	</div>
-		
-	<script>document.querySelector(".side-panel-toggle").addEventListener("click", () => {
-			document.querySelector(".wrapper").classList.toggle("side-panel-open");
-		});
+	<script>document.querySelector(".spbutton").addEventListener("click", () => {
+	document.querySelector(".wrapper").classList.toggle("side-panel-open");
+	});
 	</script>
-	
 
-
-
-
-
-
-
-
-		<div id="context-menu" class="all-right-click">
-			<div class="item">
-				<input type="checkbox" class=".c-checkbox" id="grid" onchange="toggleGrid()" checked="true"> grid</checkbox>
-			</div>
-			<div class="item">
-				<input type="checkbox" class=".c-checkbox" id="Axis" onchange="toggleAxis()" checked="true"> Axis</checkbox>
-			</div>
-			<div class="item">
-				<input type="checkbox" class=".c-checkbox" id="num" onchange="toggleNums()" checked="true"> Show Numbers on X </checkbox>
-			</div>
-			<div class="item">
-				<input type="checkbox" class=".c-checkbox" id="num" onchange="toggleNumsy()" checked="true"> Show Numbers on Y </checkbox>
-			</div>
-			<hr />
-			<div class="item">
-				<i class="fa fa-refresh" onclick="SAVE()">save</i> 
-			</div>
-			<div class="item">
-				<i class="fa fa-refresh" onclick="LOAD()">load</i> 
-			</div>
-
-	
+	<div id="context-menu" class="all-right-click">
+		<div class="citem">
+			<input type="checkbox" class=".c-checkbox" id="grid" onchange="toggleGrid()" checked="true"> grid</checkbox>
+		</div>
+		<div class="citem">
+			<input type="checkbox" class=".c-checkbox" id="Axis" onchange="toggleAxis()" checked="true"> Axis</checkbox>
+		</div>
+		<div class="citem">
+			<input type="checkbox" class=".c-checkbox" id="num" onchange="toggleNums()" checked="true"> Show Numbers on X </checkbox>
+		</div>
+		<div class="citem">
+			<input type="checkbox" class=".c-checkbox" id="num" onchange="toggleNumsy()" checked="true"> Show Numbers on Y </checkbox>
+		</div>
+		<hr />
+		<div class="citem">
+			<i class="fa fa-refresh" onclick="SAVE()">save</i> 
+		</div>
+		<div class="citem">
+			<i class="fa fa-refresh" onclick="LOAD()">load</i> 
 		</div>
 
+
 	</div>
+
+
 
 
 </body>

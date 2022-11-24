@@ -22,15 +22,17 @@ class Dot extends Point{
 		if(!this.fix && !this.selected && world.gravity) this.p.add(new p5.Vector(0,-.04))
 	}
 	show(){
-		fill(this.col)
-		if(this.fix==true) fill(250,20,20)
-		if(this.selected==true) {
-			fill(20,20,19) 
-			
+		if(this.showen){
+			fill(this.col)
+			if(this.fix==true) fill(250,20,20)
+			if(this.selected==true)
+		 {
+				fill(20,20,19) 
+				
 		}
 
 		strokeWeight(1)
-		ellipse(this.X,this.Y,10)
+		ellipse(this.X,this.Y,10)}
 	}
 }
 class Rot extends Dot{

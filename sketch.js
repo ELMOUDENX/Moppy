@@ -174,13 +174,11 @@ function mouseDragged(e) {
         
         world.points.forEach(p => {
             if (p.selected ) {
-                p.p.x=world.Xtox(mouseX)
-                p.p.y=world.Ytoy(mouseY)
-
+                p.move(mouseX,mouseY)
             }       
         });
         
-    if (mouseButton==RIGHT ) {
+    if (mouseButton==RIGHT && mouseIsPressed ) {
         
         world.Origine.add(movedX,movedY)
         world.update()
@@ -200,7 +198,10 @@ function keyPressed() {
 
   
 
-
+function toggleShow(e){
+    console.log(e);
+    e.showen=!e.showen
+}
 
 
 

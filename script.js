@@ -1,4 +1,5 @@
 window.addEventListener("contextmenu",function(event) {
+    console.log(event);
     // this eliminate the default C.Menu
     event.preventDefault();
     var contextElement = document.getElementById("context-menu");
@@ -27,26 +28,25 @@ function appendObjToPanel(obj){
     let pItem,pContnt,chbx
         
     panel = document.getElementById('panellist')
-    pItem = document.createElement('div' )
-
-        chbx   = document.createElement('input' )
-        chbx.type='checkbox'
-
-        chbx.className='pItemChbx' 
-
-        chbx.id=obj.name+"chbx"
-
-        pContnt= document.createElement('div' )
+        pItem = document.createElement('div' )
         pItem.className='pItem' 
-        pItem.id=obj.name
+        pItem.id=obj.name+"itm"
 
-        pContnt.textContent = obj.content 
+            chbx   = document.createElement('input' )
+            chbx.type='checkbox'
+            chbx.className='pItemChbx' 
+            chbx.id=obj.name+"cb"
+            chbx.onchange= ()=>{toggleShow(obj)}
 
+
+
+            pContnt= document.createElement('span' )
+            pContnt.textContent = obj.content 
+            pContnt.id=obj.name
         pItem.appendChild(chbx);
         pItem.appendChild(pContnt);
 
     panel.appendChild(pItem);
 
 }
-
 
