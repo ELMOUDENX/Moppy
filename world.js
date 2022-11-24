@@ -218,7 +218,7 @@ class World{
     addPoint(A){
         //let A=new Point(x,y,true)
         this.points.push(A)
-        A.addToPanel()
+        
     }
     addSegm(A,B){
         let S=new Seg(A,B)
@@ -228,7 +228,7 @@ class World{
     addFun(f){
         let fx=new Fun(f)
         this.functions.push(fx)
-        fx.addToPanel()
+        
     }
 
 
@@ -274,9 +274,10 @@ class Point{
 
         this.SHOWLABEL=true
         this.selected=false
-        this.showen=false
+        this.showen=true
         this.name
         this.col='blue'
+        this.addToPanel()
     }
     dist(X,Y,byPixel=true){
         return world.fromWorldToScreen(this.p.x,this.p.y).dist(createVector(X,Y))
@@ -342,7 +343,6 @@ class Point{
         this.p.y=world.Ytoy(mouseY)
 
         let text = document.getElementById(this.name);
-
         text.textContent =this.content ;
     }
 
@@ -354,6 +354,7 @@ class Seg{
     constructor(A,B){
         this.A=A
         this.B=B
+        this.addToPanel()
     }
 
     show(){

@@ -42,6 +42,9 @@ body {
   position:static;
   right:50%;
   transition: 1s;
+  overflow-y: auto;
+  scrollbar-width: 2px;
+  scroll-snap-type: none;
 }
 
 .side-panel-open .sp-icon-open {
@@ -93,6 +96,7 @@ body {
   position: absolute;
   height: 100vh;
   transition: 5s;
+
 }
   
 .main {
@@ -149,14 +153,12 @@ INPUT
 {
   margin:  8px ;
   padding: 8px;
-  background-color: rgb(212, 208, 208);
-  border-radius: 6px;
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  
+  background-color: rgb(243, 237, 237);
+  border-radius: 25px;
+
   height:26px;
   font-size: 20px;
+  font-family: 'clash', Times, serif;
   position: relative;
-  initial-value: 3;
     
 }

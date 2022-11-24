@@ -22,17 +22,22 @@ class Dot extends Point{
 		if(!this.fix && !this.selected && world.gravity) this.p.add(new p5.Vector(0,-.04))
 	}
 	show(){
+
 		if(this.showen){
+
+			this.showName()
+            this.showLabel()
 			fill(this.col)
 			if(this.fix==true) fill(250,20,20)
 			if(this.selected==true)
-		 {
-				fill(20,20,19) 
-				
-		}
+			{
+					fill(20,20,19) 
+					
+			}
 
-		strokeWeight(1)
-		ellipse(this.X,this.Y,10)}
+			strokeWeight(1)
+			ellipse(this.X,this.Y,10)
+		}
 	}
 }
 class Rot extends Dot{
@@ -66,10 +71,14 @@ class Rot extends Dot{
 	}
 }
 class Rig{
+	static n=0
 	constructor(a=new Dot(),b=new Dot()){
 		this.A=a
 		this.B=b
 		this.l=this.A.p.dist(this.B.p)
+		this.showen=true
+		this.n=Rig.n++
+		this.addToPanel()
 
 	}
 
@@ -85,13 +94,25 @@ class Rig{
 
 	}
 
-
+    addToPanel(){
+        appendObjToPanel(this)
+    }
 	show(){
-        stroke(2)
-		strokeWeight(4)
-		line(this.A.X,this.A.Y,this.B.X,this.B.Y)
+		if (this.showen) {
+			stroke(2)
+			strokeWeight(4)
+			line(this.A.X,this.A.Y,this.B.X,this.B.Y)
+		}
 
 	}
+	get name(){
+		let l=this.n%26
+		let n=int(this.n/26)
+		return n==0?String.fromCharCode(l+65):String.fromCharCode(l+65)+n
+	}
+	get content(){
+        return this.n==0 ?"Rig":"Rig"+this.n
+    }
 }
 
 class Barr extends Rig{

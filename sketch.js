@@ -38,7 +38,7 @@ function draw() {
     checkselection()
     world.R.forEach(r => {
             r.update()
-            r.show()
+            
     });
     world.points.forEach(p => {
         if(world.play){
@@ -47,6 +47,10 @@ function draw() {
         
         if(p.selected) p.p=new p5.Vector(p.p.x,p.p.y)
         p.chng()
+    });
+    world.R.forEach(r => {
+        
+        r.show()
     });
     world.show()
     //noLoop()

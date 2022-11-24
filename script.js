@@ -37,6 +37,7 @@ function appendObjToPanel(obj){
             chbx.className='pItemChbx' 
             chbx.id=obj.name+"cb"
             chbx.onchange= ()=>{toggleShow(obj)}
+            chbx.checked=true
 
 
 

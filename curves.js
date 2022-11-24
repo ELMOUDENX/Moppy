@@ -9,9 +9,10 @@ class Fun{
         this.colHu=random(360)
         this.construct()
         this.name
-        
+        this.showen=true
         this.i=Fun.i
         Fun.i++
+        this.addToPanel()
         
     }
 
@@ -41,10 +42,11 @@ class Fun{
         this.construct()
     }
     show(){
-
-        this.segs.forEach(e=>{
-            e.show()
-        })
+        if(this.showen){
+            this.segs.forEach(e=>{
+                e.show()
+            })
+        }
     }
 
 
@@ -52,9 +54,6 @@ class Fun{
         return this.name+"(x) =  "+this.f  
     }
     get name(){
-        stroke(0)
-        strokeWeight(0)
-
         let l=Fun.nameL[Fun.i%7-1]  
         let n=int(this.i/7)
         return n==0?l:l+n
