@@ -41,13 +41,16 @@ class Dot extends Point{
 	}
 }
 class Rot extends Dot{
-	constructor(x=0,y=0,r=36){
+	static n=0
+	constructor(x=0,y=0,r=5){
 		super(x+r,y)
 		this.c=new p5.Vector(x,y)
 		this.fix=true
 		this.selected=false
 		this.r=r
-		//this.link=new Rigg()
+		this.showen=true
+		this.n=Rig.n++
+		this.addToPanel()
 	}
 	chng(){
 		if (keyIsDown(88)) {
@@ -55,20 +58,33 @@ class Rot extends Dot{
 		}
 	}
 	update(){
-
 		this.p=new p5.Vector(this.c.x+this.r*cos(t),this.c.y+this.r*sin(t))
 	}
+
 	show(){
-		
-		//if(this.fix==true) fill(250,20,20)
-		if(this.selected==true) fill(200,250,19)
+		if (this.showen) {
+					//if(this.fix==true) fill(250,20,20)
+			if(this.selected==true) fill(200,250,19)
 			fill(106,120,20)
-		strokeWeight(0)
-		ellipse(this.X,this.Y,10)
-		ellipse(world.xtoX(this.c),world.ytoY(this.c))
-		line(this.X,this.Y,world.xtoX(this.c),world.ytoY(this.c))
+			
+			ellipse(this.X,this.Y,10)
+			ellipse(world.xtoX(this.c),world.ytoY(this.c))
+			line(this.X,this.Y,world.xtoX(this.c),world.ytoY(this.c))
+		}
+
 
 	}
+	get name(){
+		
+		return this.n==0 ?"Rot":"Rot"+this.n 
+	}
+	get content(){
+
+        return this.name
+    }
+	addToPanel(){
+        appendObjToPanel(this)
+    }
 }
 class Rig{
 	static n=0

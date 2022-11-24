@@ -3,7 +3,7 @@ let offsit,t=0
 let gg=document.querySelector("#grid")
 let canvas,funExpr="Math.sin(3*x)"
 
-let margin=[20,30]
+let margin=[20,10]
 
 
 //   SETUP DRAW  MAIN LOOP :
@@ -102,8 +102,7 @@ function mouseClicked(e) {
 
 
 function mousePressed() {
-    console.log(world.L);
-    console.log(world.R);
+
 	if( mouseButton === CENTER ){
 
 			world.points.forEach(e => {
