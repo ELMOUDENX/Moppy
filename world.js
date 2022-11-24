@@ -17,7 +17,7 @@ class World{
         this.SHOWNUMBERS=[true,true]
         this.ZOOMTOMOUSE=true
         this.GRIDLENGTH=70
-        this.Origine=createVector(windowWidth/3,windowHeight/2)
+        this.Origine=createVector(0.6*windowWidth,windowHeight/2)
         this.i=createVector(this.GRIDLENGTH,0)
         this.j=createVector(0,-this.GRIDLENGTH)
         this.I=createVector(1,0)
@@ -94,7 +94,7 @@ class World{
             r=offsit+k*gridwidth
             if (this.SHOWGRID) {
                 strokeWeight(0.6)
-                line(r,0,r,windowHeight)
+                line(r,0,r,window.height)
                
             }
             rm=0
@@ -102,7 +102,7 @@ class World{
                 strokeWeight(0.2)
                 for (let s = 1; s < (Nbase==2?5:4); s++) {
                     rm=r+s*gridwidth/(Nbase==2?5:4)
-                    line(rm,0,rm,windowHeight)
+                    line(rm,0,rm,window.height)
                 }
             }
 
@@ -246,11 +246,13 @@ class Axe{
 
     show(){
         stroke(0)
+        strokeWeight(2.3)
+
        if(this.isX){
         line(0,this.O.y,windowWidth,this.O.y)
        } 
        else{
-        line(this.O.x,0,this.O.x,windowHeight)
+        line(this.O.x,0,this.O.x,window.height)
        }
         
     }

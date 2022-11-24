@@ -7,41 +7,51 @@ body {
 .spbutton {
   position: relative;
   right: 0px;
-  padding: 25px;
+  padding:2%;
   transition: .5s;
   cursor:pointer;
 }
 .spbutton:hover {
-  margin-left: -10px;
+  margin-left: 10px;
   
 }
 .spbutton:before  {
   display: initial;
-  right: 20%;
+  right: -20%;
   margin-left: 210px;
   transition: 1s;
 }
+.spbutton:hover {
+  background: #4e4e51;
+}
+  
+#table-btn {
+  background: rgba(0, 255, 255, 0);
+  left: 95%;
+  top: 47%;
+  transition: 0.4s;
+}
+
+
+
 .side-panel {
   position: absolute;
   display: none;
   width: auto;
-  padding: 5%;
+  padding: 1%;
   flex-shrink: 0;
-  background: #b8bff7;
-  box-shadow: 0 0 16px rgba(0, 0, 0, 0.578);
+  background: #333333;
+  box-shadow: 0 0 12px rgba(0, 0, 0);
   transition: 1s;
 }
 
-.spbutton:hover {
-  background: #080262;
-}
-  
+
 
 .side-panel-open .side-panel {
   display: initial;
   position:static;
-  right:50%;
-  transition: 1s;
+  right:80%;
+  transition: .5s;
   overflow-y: auto;
   scrollbar-width: 2px;
   scroll-snap-type: none;
@@ -50,18 +60,14 @@ body {
 .side-panel-open .sp-icon-open {
   display: none !important;
 }
+.sp-icon-close {
+  display: none !important;
+  transition: 1px;
+  
 
+}
 .side-panel-open .sp-icon-close {
   display: initial !important;
-}
-
-.Panel {
-  overflow: visible;
-  position: relative;
-  width: auto;
-  background: rgba(255, 255, 255, 0.905);
-  box-shadow: 0px 0px 8px rgba(37, 3, 3, 0.394);
-  right: 250px;
 }
 
 .pItem {
@@ -70,27 +76,23 @@ body {
   height: auto;
   place-items: center;
 
-  margin: 7px;
-  padding: 16px;
+  margin:2%;
+  padding: 4%;
   cursor:pointer;
   border-radius: 8px;
-  background-color: rgb(250, 247, 244);
-  backdrop-filter: blur(3px);
-  box-shadow: -2px -2px 2px rgba(85, 85, 85, 0.394);
+  background-color: #1e1e1e;
+  box-shadow: 0px 0px 3px rgba(0, 0, 0, 0.394);
 
-  color: black;
+  color: rgb(246, 188, 53);
   
-  font-size: 20px;
+  font-size: 22px;
 }
 
 .pItem:hover {
-  background: rgba(228, 228, 238, 0.55);
+  background: #f3172994;
 }
 
-.sp-icon-close {
-  display: none !important;
-  transition: 1px;
-}
+
 .wrapper {
   display: flex;
   position: absolute;
@@ -99,10 +101,6 @@ body {
 
 }
   
-.main {
-  flex-grow: 1;
-  padding: 20px;
-}
 
 /*   Check Box*/
 
@@ -115,13 +113,6 @@ body {
 
 
 
-
-#table-btn {
-  background: rgba(0, 255, 255, 0);
-  left: 95%;
-  top: 47%;
-  transition: 0.4s;
-}
 
   
 INPUT[type=checkbox]
@@ -149,16 +140,17 @@ INPUT[type=checkbox]:checked
     background: #409fd6 url("data:image/gif;base64,R0lGODlhCwAKAIABAP////3cnSH5BAEKAAEALAAAAAALAAoAAAIUjH+AC73WHIsw0UCjglraO20PNhYAOw==") 8px 8px no-repeat;
 }
 
-INPUT
+#addfun
 {
   margin:  8px ;
   padding: 8px;
+  padding-left: 28px;
   background-color: rgb(243, 237, 237);
   border-radius: 25px;
 
   height:26px;
-  font-size: 20px;
-  font-family: 'clash', Times, serif;
+  font-size: 24px;
+  font-family: clash-bold, Times, serif;
   position: relative;
     
 }

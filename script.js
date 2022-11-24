@@ -1,19 +1,27 @@
 window.addEventListener("contextmenu",function(event) {
-    console.log(event);
-    // this eliminate the default C.Menu
-    event.preventDefault();
+console.log(event);
+    let s=event.target
+   event.preventDefault();    
+    if (s.className=="pItem"||s.className=="content") {
+            console.log(s);
+
+
+
+
+    }   
+
+ 
     var contextElement = document.getElementById("context-menu");
     contextElement.style.top = event.offsetY + "px";
     contextElement.style.left = event.offsetX + "px",
     contextElement.classList.add("active")
+
 })
 
 window.addEventListener("click", function() {
     document.getElementById("context-menu").classList.remove("active")
     
 })
-var sideTableBtn = document.getElementById("table-btn")
-
 HTMLElement.prototype.appendFirst = function(childNode) {
     if (this.firstChild) {
         this.insertBefore(childNode, this.firstChild);
@@ -42,6 +50,7 @@ function appendObjToPanel(obj){
 
 
             pContnt= document.createElement('span' )
+            pContnt.className='content' 
             pContnt.textContent = obj.content 
             pContnt.id=obj.name
         pItem.appendChild(chbx);

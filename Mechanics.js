@@ -106,12 +106,12 @@ class Rig{
 
 	}
 	get name(){
-		let l=this.n%26
-		let n=int(this.n/26)
-		return n==0?String.fromCharCode(l+65):String.fromCharCode(l+65)+n
+		
+		return this.n==0 ?"Rig":"Rig"+this.n 
 	}
 	get content(){
-        return this.n==0 ?"Rig":"Rig"+this.n
+
+        return this.name+" = { "+this.A.name+" , "+this.B.name+" }"
     }
 }
 
