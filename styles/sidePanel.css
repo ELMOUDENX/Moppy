@@ -7,13 +7,13 @@ body {
 .spbutton {
   position: relative;
   right: 0px;
-  padding:2%;
+  padding:0;
+  width: 65px;
   transition: .5s;
   cursor:pointer;
 }
 .spbutton:hover {
-  margin-left: 10px;
-  
+  background: #838383;
 }
 .spbutton:before  {
   display: initial;
@@ -21,10 +21,7 @@ body {
   margin-left: 210px;
   transition: 1s;
 }
-.spbutton:hover {
-  background: #4e4e51;
-}
-  
+
 #table-btn {
   background: rgba(0, 255, 255, 0);
   left: 95%;
@@ -42,7 +39,7 @@ body {
   flex-shrink: 0;
   background: #333333;
   box-shadow: 0 0 12px rgba(0, 0, 0);
-  transition: 1s;
+  
 }
 
 
@@ -51,7 +48,7 @@ body {
   display: initial;
   position:static;
   right:80%;
-  transition: .5s;
+  
   overflow-y: auto;
   scrollbar-width: 2px;
   scroll-snap-type: none;
@@ -59,15 +56,17 @@ body {
 
 .side-panel-open .sp-icon-open {
   display: none !important;
+ 
 }
 .sp-icon-close {
   display: none !important;
-  transition: 1px;
+  
   
 
 }
 .side-panel-open .sp-icon-close {
   display: initial !important;
+  
 }
 
 .pItem {
@@ -117,7 +116,7 @@ body {
   
 INPUT[type=checkbox]
 {
-    background-color: #DDD;
+    background-color: rgb(240, 240, 240);
     border-radius: 5px;
     appearance: none;
     -webkit-appearance: none;
@@ -136,8 +135,9 @@ INPUT[type=checkbox]:focus
 }
 INPUT[type=checkbox]:checked
 {
+  
     background-color: #409fd6;
-    background: #409fd6 url("data:image/gif;base64,R0lGODlhCwAKAIABAP////3cnSH5BAEKAAEALAAAAAALAAoAAAIUjH+AC73WHIsw0UCjglraO20PNhYAOw==") 8px 8px no-repeat;
+    background: #2aa9f3 url("data:image/gif;base64,R0lGODlhCwAKAIABAP////3cnSH5BAEKAAEALAAAAAALAAoAAAIUjH+AC73WHIsw0UCjglraO20PNhYAOw==") 8px 8px no-repeat;
 }
 
 #addfun
