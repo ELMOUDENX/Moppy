@@ -180,7 +180,7 @@ function mouseDragged(e) {
             }       
         });
         
-    if (mouseButton==LEFT && mouseIsPressed ) {
+    if (keyIsDown(SHIFT)&&  mouseButton==LEFT && mouseIsPressed ) {
         
         world.Origine.add(movedX,movedY)
         world.update()
