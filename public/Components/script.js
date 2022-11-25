@@ -55,3 +55,8 @@ function appendObjToPanel(obj){
 
 }
 
+window.addEventListener("deviceorientation", handleOrientation, true);
+
+function handleOrientation(){
+    
+}

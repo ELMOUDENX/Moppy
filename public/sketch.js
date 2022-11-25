@@ -2,6 +2,11 @@ let world,w=600
 let offsit,t=0
 let gg=document.querySelector("#grid")
 let canvas,funExpr="Math.sin(3*x)"
+/*let device=
+{   
+    wndw:{Height:windowHeight,width:windowWidth},
+    orient:0
+}*/
 
 let margin=[20,10]
 
@@ -32,21 +37,20 @@ function setup() {
     world.R.push(new Rig(world.points[0],world.points[1]))
     world.R.push(new Rig(world.points[1],world.points[2]))*/
 }
+let dt=0.001
 function draw() {
+    dt=dt==0?0.1:1/frameRate()
     background(256)
 
     checkselection()
     world.R.forEach(r => {
-            r.update()
+            r.update(dt)
             
     });
     world.points.forEach(p => {
         if(world.play){
             t+=0.005
             p.update()}
-        
-        if(p.selected) p.p=new p5.Vector(p.p.x,p.p.y)
-        p.chng()
     });
     world.R.forEach(r => {
         
