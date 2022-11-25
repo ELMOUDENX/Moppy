@@ -3,13 +3,13 @@ console.log(event);
     let s=event.target
    event.preventDefault();    
     if (s.className=="pItem"||s.className=="content") {
-            console.log(s);
+           console.log(s);
 
     }   
- 
+  
     var contextElement = document.getElementById("context-menu");
-    contextElement.style.top = event.offsetY + "px";
-    contextElement.style.left = event.offsetX + "px",
+    contextElement.style.top = mouseY + "px";
+    contextElement.style.left = mouseX + "px",
     contextElement.classList.add("active")
 
 })

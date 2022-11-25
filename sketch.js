@@ -61,7 +61,9 @@ function draw() {
 function inPositionHome() {
     return world.i.x==40 && world.Origine==createVector(windowWidth/3,windowHeight/2)
 }
-
+function windowResized() {
+    resizeCanvas(windowWidth-margin[0], windowHeight-margin[1]);
+  }
 
 
 function checkselection(){
