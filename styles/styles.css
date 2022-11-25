@@ -22,7 +22,6 @@ button {
     background-color: rgba(246, 246, 246, 0.709);
     backdrop-filter: blur(3px);
     box-shadow: 2px 2px 8px rgba(5, 5, 5, 0.394);
-    transition: .01s;
     color: black;
     animation: pls-ic .95s;
     font-size: 50px;
@@ -34,6 +33,7 @@ button:active{
     background-color: rgba(149, 123, 123, 0.89);
 }
 .home-button {
+    top: 20px;
     animation: home-btn 1s;
 }
 @keyframes home-btn {
@@ -41,24 +41,25 @@ button:active{
         margin-top: -100px;
     }
 }
+
 .plus{
-    top: 90px;
+    top: 110px;
     border-radius: 5px 5px 0 0;
 }
 .minus {
-    top: 150px;
+    top: 170px;
     border-radius: 0 0 5px 5px;
 }
 .play-button {
-    top: 230px;
+    top: 250px;
     animation: ply-bt .8s;
 }
 .gr-button {
-    bottom: 70px;
+    bottom: 60px;
     animation: ply-bt .8s;
 }
 .fix-button {
-    bottom: 140px;
+    bottom: 130px;
     
     animation: ply-bt .8s;
 }
@@ -67,7 +68,6 @@ button:active{
         margin-left: -100px;
     }
 }
-
 
 @keyframes mns-ic {
     from {
@@ -81,7 +81,7 @@ button:active{
 .icon {
     width: 30px;
     height: 30px;  
-    margin-top: 4px;
+    
     transition: 0.4s;
 }
 
@@ -92,28 +92,28 @@ button:active{
     }
 }
 
+.text-c {
+    margin-left: 10px
+}
+
 .all-right-click {
     font-family: "Open Sans", sans-serif;
 }
-
-
-
-
-
 
 /*   C.MENU    */
 
 #context-menu {
     position: fixed;
     z-index: 10;
-    width: auto;
-    background: rgba(241, 241, 241, 0.62);
+    width: 220px;
+    background: rgba(151, 151, 151, 0.568);
     transform:scale(0) ;
+    user-select: none;
     
-    transform-origin: top right;
+    transform-origin: top left;
     border-radius: 6px;
-    backdrop-filter: blur(2px);
-    box-shadow: 0px 0px 10px rgba(94, 97, 105, 0.663);
+    backdrop-filter: blur(5px);
+    box-shadow: 2px 3px 10px rgba(94, 97, 105, 0.663);
 }
 #context-menu.active {
     transform: scale(1);
@@ -122,7 +122,8 @@ button:active{
 .citem {
     display: flex;
     padding: 8px 10px;
-    font-size: 20px;
+    
+    font-size: 16px;
     color:rgb(0, 0, 0);
 }
 

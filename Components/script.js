@@ -5,11 +5,7 @@ console.log(event);
     if (s.className=="pItem"||s.className=="content") {
             console.log(s);
 
-
-
-
     }   
-
  
     var contextElement = document.getElementById("context-menu");
     contextElement.style.top = event.offsetY + "px";
@@ -20,8 +16,8 @@ console.log(event);
 
 window.addEventListener("click", function() {
     document.getElementById("context-menu").classList.remove("active")
+    
 })
-
 HTMLElement.prototype.appendFirst = function(childNode) {
     if (this.firstChild) {
         this.insertBefore(childNode, this.firstChild);
@@ -40,13 +36,12 @@ function appendObjToPanel(obj){
         pItem.className='pItem' 
         pItem.id=obj.name+"itm"
 
-            chbx   = document.createElement('input' )
+            chbx = document.createElement('input' )
             chbx.type='checkbox'
             chbx.className='pItemChbx' 
             chbx.id=obj.name+"cb"
-            chbx.onchange= ()=>{toggleShow(obj)}
+            chbx.onchange= () => {toggleShow(obj)}
             chbx.checked=true
-
 
 
             pContnt= document.createElement('span' )
@@ -55,7 +50,7 @@ function appendObjToPanel(obj){
             pContnt.id=obj.name
         pItem.appendChild(chbx);
         pItem.appendChild(pContnt);
-
+        
     panel.appendChild(pItem);
 
 }
