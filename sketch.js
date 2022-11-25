@@ -155,7 +155,7 @@ function mousePressed() {
 		return 
 	}
 }
-sv
+
 let xOffset=0,yOffset=0
 
 function mouseDragged(e) {
@@ -180,14 +180,14 @@ function mouseDragged(e) {
             }       
         });
         
-    if (mouseButton==RIGHT && mouseIsPressed ) {
+    if (mouseButton==LEFT && mouseIsPressed ) {
         
         world.Origine.add(movedX,movedY)
         world.update()
 
 
     }
-   // world.Origine.add(movedX,movedY)
+   
 }}
   
 function mouseReleased() {

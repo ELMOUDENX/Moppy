@@ -20,8 +20,8 @@ console.log(event);
 
 window.addEventListener("click", function() {
     document.getElementById("context-menu").classList.remove("active")
-    
 })
+
 HTMLElement.prototype.appendFirst = function(childNode) {
     if (this.firstChild) {
         this.insertBefore(childNode, this.firstChild);
