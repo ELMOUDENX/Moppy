@@ -160,22 +160,10 @@ let xOffset=0,yOffset=0
 
 function mouseDragged(e) {
 
-	world.points.forEach(e => {
-		if (e.selected) {
-
-            //e.p=createVector(world.Xtox(movedX),world.Ytoy(movedY))
-            //e.p.add(createVector( movedX,movedY))
-            
-            /*e.p.x = mouseX-400 - xOffset;
-            e.p.y = 300-mouseY - yOffset;*/
-
-	}})
-
-
     if (mouseIsPressed ) {
         
         world.points.forEach(p => {
-            if (p.selected ) {
+            if (p.selected && p.showen) {
                 p.move(mouseX,mouseY)
             }       
         });
