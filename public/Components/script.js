@@ -8,16 +8,19 @@ console.log(event);
     }   
  
     var contextElement = document.getElementById("context-menu");
-    contextElement.style.top = event.offsetY + "px";
-    contextElement.style.left = event.offsetX + "px",
+    contextElement.style.top = mouseY + "px";
+    contextElement.style.left = mouseX + "px",
     contextElement.classList.add("active")
 
 })
 
 window.addEventListener("click", function() {
     document.getElementById("context-menu").classList.remove("active")
+})
+window.addEventListener("click", function() {
     
 })
+
 HTMLElement.prototype.appendFirst = function(childNode) {
     if (this.firstChild) {
         this.insertBefore(childNode, this.firstChild);

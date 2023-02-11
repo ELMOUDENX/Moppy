@@ -37,6 +37,7 @@ function setup() {
     world.R.push(new Rig(world.points[0],world.points[1]))
     world.R.push(new Rig(world.points[1],world.points[2]))*/
 }
+
 let dt=0.001
 function draw() {
     dt=dt==0?0.1:1/frameRate()
@@ -189,18 +190,6 @@ function mouseReleased() {
 
 function keyPressed() {
 }
-
-  
-
-
-
-
-
-
-
-
-
-
 
 
 // BUTTON HANDLER !============================================
