@@ -151,7 +151,6 @@ button:active{
     background: rgba(151, 151, 151, 0.568);
     transform:scale(0) ;
     user-select: none;
-    
     transform-origin: top left;
     border-radius: 6px;
     backdrop-filter: blur(5px);

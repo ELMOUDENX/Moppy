@@ -6,12 +6,30 @@ console.log(event);
             console.log(s);
 
     }   
+    
  
     var contextElement = document.getElementById("context-menu");
     contextElement.style.top = mouseY + "px";
     contextElement.style.left = mouseX + "px",
-    contextElement.classList.add("active")
-
+    contextElement.classList.add("active");
+    console.log(window.innerHeight-contextElement.offsetHeight)
+    console.log(mouseY)
+    
+    if (mouseY > window.innerHeight-contextElement.offsetHeight) {
+        contextElement.style.top= mouseY - contextElement.offsetHeight + "px";
+        contextElement.style.transformOrigin = "bottom left";
+    } else if (mouseY < window.innerHeight-contextElement.offsetHeight) {
+        contextElement.style.transformOrigin = "top left";
+    }
+    if (mouseX > window.innerWidth-contextElement.offsetWidth) {
+        contextElement.style.left= mouseX - contextElement.offsetWidth + "px";
+        contextElement.style.transformOrigin = "top right"
+    }
+    
+    if (mouseX > window.innerWidth-contextElement.offsetWidth && mouseY > window.innerHeight-contextElement.offsetHeight) {
+        contextElement.style.transformOrigin = "bottom right";
+    }
+    
 })
 
 window.addEventListener("click", function() {

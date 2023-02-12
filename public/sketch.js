@@ -242,14 +242,14 @@ function fixpos() {
 
 // SAVE SCENE 
 function SAVE() {
-    var o = {"w": world.L};
+    var o = {"world": world.L};
     
     localStorage.setItem('myStorageSS', JSON.stringify(o));
 
 }
 function LOAD() {
     world.L = JSON.parse(localStorage.getItem('myStorageSS'));
-    console.log();
+    console.log(world.L);
 }
 
 function addfun(e) {
