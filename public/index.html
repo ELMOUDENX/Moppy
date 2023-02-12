@@ -20,7 +20,7 @@
 </head>
 
 <body>
-	<div id="help">
+	<div id="help" class="inactive" >
 		<div style="display: flex;">
 			<h1>- How to use Moppy?</h1>
 			<img src="./images/xicon.png" onclick="document.getElementById('help').classList.add('inactive')" class="x-icon-btn" width="25px" height="25px" style="margin-left: auto; margin-top: 10px;margin-right: 11px;cursor: pointer;"/>
@@ -65,6 +65,9 @@
 			</button>
 			<button class="fix-button">
 				<img onclick="fixpos()" class="icon" src="./images/dont-move.png"></img>
+			</button>
+			<button class="help-button" onclick="document.getElementById('help').classList.remove('inactive')">
+				<img  class="icon" src="./images/help-bt.png"></img>
 			</button>
 		</div>
 	</div>

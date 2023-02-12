@@ -11,6 +11,10 @@ input{
     display: list-item;
 
 }
+.help-button {
+    margin-top: 375px;
+    
+}
 button {
     height  : 60px;
     width   : 60px;
@@ -41,20 +45,23 @@ button:active{
         margin-top: -100px;
     }
 }
+
 #help.inactive {
     display: none;
 }
+
 #help {
-    z-index: 150;
+    z-index: 10000;
     background-color: rgba(209, 209, 209, 0.795);
     backdrop-filter: blur(5px);
     position: fixed;
-    margin: 100px 400px 0 400px;
+    margin: 100px auto auto auto;
     left: 0px;
     right: 0px;
     border-radius: 10px;
     box-shadow: 5px 10px 15px rgba(85, 85, 85, 0.404);
-    height: 400px;
+    height: 410px;
+    width: 700px;
 }
 #help li {
     color: rgb(27, 27, 27);
