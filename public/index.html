@@ -50,23 +50,23 @@
 	</div>
 	<div id="Blist">
 		<div>
-			<button class="home-button" id="home-btn">
-				<img src="./images/Home2.png" class="icon" onclick="home()" />
+			<button class="home-button" id="home-btn" onclick="home()">
+				<img src="./images/Home2.png" class="icon"  />
 			</button>
 			<button onclick="plusZoom()" class="plus"><a>+</a>
 			</button>
 			<button onclick="minusZoom()" class="minus"><a>-</a>
 			</button>
-			<button class="play-button">
-				<img onclick="play()" class="icon" src="./images/R.png"></img>
+			<button class="play-button" onclick="play()">
+				<img  class="icon" src="./images/R.png"></img>
 			</button>
-			<button class="gr-button">
-				<img onclick="gravitate()" class="icon" src="./images/gravity.png"></img>
+			<button class="gr-button" onclick="gravitate()">
+				<img  class="icon" src="./images/gravity.png"></img>
 			</button>
-			<button class="fix-button">
-				<img onclick="fixpos()" class="icon" src="./images/dont-move.png"></img>
+			<button class="fix-button" onclick="fixpos()">
+				<img  class="icon" src="./images/dont-move.png"></img>
 			</button>
-			<button style="margin-top: 378px;" onclick="document.getElementById('help').classList.remove('inactive')">
+			<button style="bottom: 201px;" onclick="document.getElementById('help').classList.remove('inactive')">
 				<img  class="icon" src="./images/help-bt.png"></img>
 			</button>
 		</div>
@@ -101,19 +101,17 @@
 				class="text-c">grid</span> </checkbox>
 		</div>
 		<div class="citem">
-			<input type="checkbox" class=".c-checkbox" id="mgrid" onchange="toggleMGrid()" checked="true"> Minor grid
+			<input type="checkbox" class=".c-checkbox" id="mgrid" onchange="toggleMGrid()" checked="true"> <span class="text-c">Minor grid</span>
 			</checkbox>
 		</div>
 		<div class="citem">
-			<input type="checkbox" class=".c-checkbox" id="Axis" onchange="toggleAxis()" checked="true"> Axis</checkbox>
+			<input type="checkbox" class=".c-checkbox" id="Axis" onchange="toggleAxis()" checked="true"> <span class="text-c">Axis</span></checkbox>
 		</div>
 		<div class="citem">
-			<input type="checkbox" class=".c-checkbox" id="num" onchange="toggleNums()" checked="true"> Show Numbers on
-			X </checkbox>
+			<input type="checkbox" class=".c-checkbox" id="num" onchange="toggleNums()" checked="true"> <span class="text-c">Show Numbers on X</span> </checkbox>
 		</div>
 		<div class="citem">
-			<input type="checkbox" class=".c-checkbox" id="num" onchange="toggleNumsy()" checked="true"> Show Numbers on
-			Y </checkbox>
+			<input type="checkbox" class=".c-checkbox" id="num" onchange="toggleNumsy()" checked="true"> <span class="text-c">Show Numbers on Y</span> </checkbox>
 		</div>
 		<hr />
 		<div class="citem">

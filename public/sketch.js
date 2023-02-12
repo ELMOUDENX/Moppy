@@ -65,8 +65,6 @@ function inPositionHome() {
     return world.i.x==40 && world.Origine==createVector(windowWidth/3,windowHeight/2)
 }
 
-
-
 function checkselection(){
     world.points.forEach(p => {
         if ( ( mouseX-p.X)**2+ ( mouseY-p.Y)**2<25 ) {
@@ -188,7 +186,9 @@ function mouseReleased() {
 
 function keyPressed() {
 }
-
+function windowResized() {
+    canvas=createCanvas( windowWidth-margin[0],windowHeight-margin[1] )
+}
 
 // BUTTON HANDLER !============================================
 
