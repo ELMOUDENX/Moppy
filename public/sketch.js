@@ -8,11 +8,9 @@ let canvas,funExpr="Math.sin(3*x)"
     orient:0
 }*/
 
-let margin=[20,10]
-
+let margin=[10,10]
 
 //   SETUP DRAW  MAIN LOOP :
-
 
 function setup() {
     smooth(2)
