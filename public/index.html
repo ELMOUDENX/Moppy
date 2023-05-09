@@ -3,103 +3,125 @@
 
 <head>
 	<meta charset="utf-8">
-	<title>Moppy</title>
-
+	<title>Moppy Code</title>
+	<meta name="theme-color" content="#00d8db"/>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimal-ui">
+	<meta name="description"
+		value="Moppy helps you to draw any function and shapes easily, and you can move the shapes and the points also gravity move.">
 	<link rel="stylesheet" href="./styles/styles.css" />
 	<link rel="stylesheet" href="./styles/sidePanel.css" />
 	<script src="p5.js"></script>
-	<script src="sketch.js"></script>	
+	<script src="sketch.js"></script>
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
-	<script src="./Components/Utilities.js"></script>	
+	<script src="./Components/Utilities.js"></script>
 	<script src="./Components/world.js"></script>
 	<script src="./Components/Mechanics.js"></script>
 	<script src="./Components/curves.js"></script>
 	<script src="./Components/script.js"></script>
-
 </head>
 
 <body>
+	<div id="help" class="inactive" >
+		<div style="display: flex;">
+			<h1>- How to use Moppy?</h1>
+			<img src="./images/xicon.png" onclick="document.getElementById('help').classList.add('inactive')" class="x-icon-btn" width="25px" height="25px" style="margin-left: auto; margin-top: 10px;margin-right: 11px;cursor: pointer;"/>
+		</div>
 
-    <div id="Blist">
-			<div>
-			<button class="home-button" id="home-btn">
-				<img src="./images/Home2.png" class="icon" onclick="home()" />
+		<div>
+			<ul>
+				<li>Add points <span class="keybtn">crtl</span> + <span class="keybtn">left click</span>.</li>
+				<li>How to add line?</li>
+				<ul>
+					<li>choose the points by clicking on it by the <span class="keybtn">middle mouse button</span>.</li>
+					<li>then choose the other point and click on it by the <span class="keybtn">middle mouse
+							button</span>.</li>
+				</ul>
+				<li>Move canvas <span class="keybtn">shift</span> + <span class="keybtn">left click</span>.</li>
+				<li>How to add function?</li>
+				<ul>
+					<li>open the side panel</li>
+					<li>type your function example: <span class="extext">1/x</span> and <span class="extext">x*x</span>,
+						<span class="extext">x+5</span>...
+					</li>
+				</ul>
+			</ul>
+		</div>
+
+	</div>
+	</div>
+	<div id="Blist">
+		<div>
+			<button class="home-button" id="home-btn" onclick="home()">
+				<img src="./images/Home2.png" class="icon"  />
 			</button>
-
 			<button onclick="plusZoom()" class="plus"><a>+</a>
 			</button>
 			<button onclick="minusZoom()" class="minus"><a>-</a>
 			</button>
-			<button class="play-button">
-				<img onclick="play()" class="icon" src="./images/R.png"></img>
-			</button>				
-			<button class="gr-button">
-				<img onclick="gravitate()" class="icon" src="./images/gravity.png"></img>
+			<button class="play-button" onclick="play()">
+				<img  class="icon" src="./images/R.png"></img>
 			</button>
-			<button class="fix-button">
-				<img onclick="fixpos()" class="icon" src="./images/dont-move.png"></img>
+			<button class="gr-button" onclick="gravitate()">
+				<img  class="icon" src="./images/gravity.png"></img>
 			</button>
-			</div>
-
-
+			<button class="fix-button" onclick="fixpos()">
+				<img  class="icon" src="./images/dont-move.png"></img>
+			</button>
+			<button style="bottom: 201px;" onclick="document.getElementById('help').classList.remove('inactive')">
+				<img  class="icon" src="./images/help-bt.png"></img>
+			</button>
+		</div>
 	</div>
 	<main></main>
 	<div class="wrapper side-panel-open">
-		<div class="side-panel"id="panel">
+		<div class="side-panel" id="panel">
 
 			<div id="panellist">
-			</div>	
+			</div>
 			<div class="input">
-				<input  id="addfun"
-				placeholder=" f(x)= ..." onchange="addfun(this)"></checkbox>
-	
-			</div>	
+				<input id="addfun" placeholder=" f(x)= ..." onchange="addfun(this)"></checkbox>
+
+			</div>
 		</div>
-		<button class="spbutton" type="button" >			
-			<span class="material-icons sp-icon-open" >
-				<img src="./images/leftArrow.png" class="icon" style="transform: rotate(180deg);"  >
+		<button class="spbutton" type="button">
+			<span class="material-icons sp-icon-open">
+				<img src="./images/leftArrow.png" class="icon" style="transform: rotate(180deg);">
 			</span>
 			<span class="material-icons sp-icon-close">
-				<img src="./images/leftArrow.png" class="icon"   /></span>
+				<img src="./images/leftArrow.png" class="icon" /></span>
 		</button>
-
-
 	</div>
 	<script>document.querySelector(".spbutton").addEventListener("click", () => {
-	document.querySelector(".wrapper").classList.toggle("side-panel-open");
-	});
+			document.querySelector(".wrapper").classList.toggle("side-panel-open");
+		});
 	</script>
-
 	<div id="context-menu" class="all-right-click">
-		 
+
 		<div class="citem">
-			<input type="checkbox" class=".c-checkbox" id="grid" onchange="toggleGrid()" checked="true"> <span class="text-c">grid</span> </checkbox>
+			<input type="checkbox" class=".c-checkbox" id="grid" onchange="toggleGrid()" checked="true"> <span
+				class="text-c">grid</span> </checkbox>
 		</div>
 		<div class="citem">
-			<input type="checkbox" class=".c-checkbox" id="mgrid" onchange="toggleMGrid()" checked="true"> Minor grid</checkbox>
+			<input type="checkbox" class=".c-checkbox" id="mgrid" onchange="toggleMGrid()" checked="true"> <span class="text-c">Minor grid</span>
+			</checkbox>
 		</div>
 		<div class="citem">
-			<input type="checkbox" class=".c-checkbox" id="Axis" onchange="toggleAxis()" checked="true"> Axis</checkbox>
+			<input type="checkbox" class=".c-checkbox" id="Axis" onchange="toggleAxis()" checked="true"> <span class="text-c">Axis</span></checkbox>
 		</div>
 		<div class="citem">
-			<input type="checkbox" class=".c-checkbox" id="num" onchange="toggleNums()" checked="true"> Show Numbers on X </checkbox>
+			<input type="checkbox" class=".c-checkbox" id="num" onchange="toggleNums()" checked="true"> <span class="text-c">Show Numbers on X</span> </checkbox>
 		</div>
 		<div class="citem">
-			<input type="checkbox" class=".c-checkbox" id="num" onchange="toggleNumsy()" checked="true"> Show Numbers on Y </checkbox>
+			<input type="checkbox" class=".c-checkbox" id="num" onchange="toggleNumsy()" checked="true"> <span class="text-c">Show Numbers on Y</span> </checkbox>
 		</div>
 		<hr />
 		<div class="citem">
-			<i class="fa fa-refresh" onclick="SAVE()">save</i> 
+			<i class="fa fa-refresh" onclick="SAVE()">save</i>
 		</div>
 		<div class="citem">
-			<i class="fa fa-refresh" onclick="LOAD()">load</i> 
+			<i class="fa fa-refresh" onclick="LOAD()">load</i>
 		</div>
-
-
 	</div>
-
-
-
 </body>
 
 </html>

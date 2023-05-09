@@ -8,11 +8,9 @@ let canvas,funExpr="Math.sin(3*x)"
     orient:0
 }*/
 
-let margin=[20,10]
-
+let margin=[10,10]
 
 //   SETUP DRAW  MAIN LOOP :
-
 
 function setup() {
     smooth(2)
@@ -37,6 +35,7 @@ function setup() {
     world.R.push(new Rig(world.points[0],world.points[1]))
     world.R.push(new Rig(world.points[1],world.points[2]))*/
 }
+
 let dt=0.001
 function draw() {
     dt=dt==0?0.1:1/frameRate()
@@ -65,8 +64,6 @@ function draw() {
 function inPositionHome() {
     return world.i.x==40 && world.Origine==createVector(windowWidth/3,windowHeight/2)
 }
-
-
 
 function checkselection(){
     world.points.forEach(p => {
@@ -189,19 +186,9 @@ function mouseReleased() {
 
 function keyPressed() {
 }
-
-  
-
-
-
-
-
-
-
-
-
-
-
+function windowResized() {
+    canvas=createCanvas( windowWidth-margin[0],windowHeight-margin[1] )
+}
 
 // BUTTON HANDLER !============================================
 
@@ -255,14 +242,14 @@ function fixpos() {
 
 // SAVE SCENE 
 function SAVE() {
-    var o = {"w": world.L};
+    var o = {"world": world.L};
     
     localStorage.setItem('myStorageSS', JSON.stringify(o));
 
 }
 function LOAD() {
     world.L = JSON.parse(localStorage.getItem('myStorageSS'));
-    console.log();
+    console.log(world.L);
 }
 
 function addfun(e) {
